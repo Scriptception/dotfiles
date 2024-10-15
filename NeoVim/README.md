@@ -65,7 +65,8 @@ Download a nerd font from <https://github.com/ryanoasis/nerd-fonts/tree/master?t
 ## Coding workflow
 
 - Show symbols (i.e. functions) with `space-s-s`, or bring up the (aerial) symbols sidebar with `space-c-s`
-  - This uses Telescope's symbols plugin
+  - TIP: This also works for headings in markdown files!
+  - This uses Telescope's symbols plugin and/or Aerial Symbol Plugin from LazyExtras
 - TODO: Refactoring, change all instances of variable name
 
 ## Terminal
