@@ -29,6 +29,8 @@ Download a nerd font from <https://github.com/ryanoasis/nerd-fonts/tree/master?t
 
 # Tips
 
+- Search key maps with `space-s-k`, i.e. `space-s-k new tab`
+  - Or show what's mapped to a key with `:verbose map <key>`
 - The `?` key is your friend. It will show you the keybindings for the current mode.
 - It is recommended to run `:LazyHealth` after installation. This will load all plugins and check if everything is working correctly.
 - Hotkeys: <https://www.lazyvim.org/keymaps#general>
@@ -41,6 +43,8 @@ Download a nerd font from <https://github.com/ryanoasis/nerd-fonts/tree/master?t
   1. In NeoTree, move your cursor over the directory you want to change to
   2. Press `Y` (Shift + y) to copy the path
   3. Press `:tchdir` and `Shift + Insert` to paste the path
+- Select all instances of a word with `*` (normal mode) and then `gn` to select the next instance
+- Cancel auto-complete with `Ctrl-e` (insert mode)
 
 ## Projects
 
