@@ -29,7 +29,7 @@ Download a nerd font from <https://github.com/ryanoasis/nerd-fonts/tree/master?t
 
 # Tips
 
-- Search key maps with `space-s-k`, i.e. `space-s-k new tab`
+- **AWESOME**: Search key maps with `space-s-k`, i.e. `space-s-k new tab`
   - Or show what's mapped to a key with `:verbose map <key>`
 - The `?` key is your friend. It will show you the keybindings for the current mode.
 - It is recommended to run `:LazyHealth` after installation. This will load all plugins and check if everything is working correctly.
@@ -64,7 +64,7 @@ Download a nerd font from <https://github.com/ryanoasis/nerd-fonts/tree/master?t
 
 ## Coding workflow
 
-- Show symbols (i.e. functions) with `space-s-s`
+- Show symbols (i.e. functions) with `space-s-s`, or bring up the (aerial) symbols sidebar with `space-c-s`
   - This uses Telescope's symbols plugin
 - TODO: Refactoring, change all instances of variable name
 
