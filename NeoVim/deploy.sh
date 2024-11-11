@@ -19,7 +19,9 @@ sudo apt install git -y
 sudo apt install gcc -y
 # 4) Install ripgrep (for live grep searching with Telescope)
 sudo apt install ripgrep -y
-# 5) Install LazyGit
+# 5) Install FZF (optional, but recommended)
+sudo apt install fzf -y
+# 6) Install LazyGit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
@@ -56,3 +58,21 @@ pip install -U terraform ansible
 # 8) Start Neovim!
 cd ~/
 nvim
+
+
+#==================================================#
+#                  POST INSTALL                    #
+#==================================================#
+MESSAGE = """
+Install these extra plugins from LazyExtra:
+ ● ai.copilot    copilot-cmp  copilot.lua  nvim-cmp  blink.cmp  lualine.nvim
+ ● coding.yanky    yanky.nvim
+   Better Yank/Paste
+ ● editor.aerial  aerial.nvim  edgy.nvim  lualine.nvim  telescope.nvim  trouble.nvim
+   Aerial Symbol Browser
+ ● editor.fzf    fzf-lua  nvim-lspconfig  todo-comments.nvim
+   Awesome picker for FZF (alternative to Telescope)
+ ● editor.telescope  nvim-lspconfig     ■ This extra is included by default
+ ● util.gitui  mason.nvim
+"""
+echo $MESSAGE
