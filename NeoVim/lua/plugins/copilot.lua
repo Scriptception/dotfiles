@@ -1,5 +1,5 @@
 return {
-  'github/copilot.vim',
+  'github/copilot.lua',
   config = function()
     require('copilot').setup({
       filetypes = {
