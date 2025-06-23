@@ -1,0 +1,47 @@
+#!/bin/sh
+# ~/.config/bspwm/bspwmrc
+# Make sure this file is executable: chmod +x ~/.config/bspwm/bspwmrc
+
+# Start keybinding daemon
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# Set up desktops
+bspc monitor -d 1 2 3 4 5 6 7 8 9
+
+# Window appearance
+bspc config border_width         2
+bspc config window_gap           10
+bspc config split_ratio          0.5
+bspc config top_padding          0
+bspc config bottom_padding       0
+bspc config left_padding         0
+bspc config right_padding        0
+
+# Focus behavior
+bspc config focus_follows_mouse  off
+bspc config click_to_focus       on
+bspc config pointer_follows_focus off
+bspc config window_focus         color
+
+# Floating rules
+bspc rule -a Gimp state=floating
+bspc rule -a Chromium state=floating
+
+# Start compositor
+picom --config ~/.config/picom/picom.conf &
+
+# Start status bar
+polybar example &
+
+# Set wallpaper or background color
+xsetroot -solid "#2e3440"
+
+
+# Load pywal colors
+. "${HOME}/.cache/wal/colors.sh"
+
+# Use them for borders
+bspc config normal_border_color "$color0"
+bspc config active_border_color "$color2"
+bspc config focused_border_color "$color6"
+

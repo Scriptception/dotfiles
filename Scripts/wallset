@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Usage: wallset /path/to/image.jpg
+
+WALL=$HOME/Pictures/Wallpapers/current
+
+if [ ! -f "$WALL" ]; then
+  #echo "❌ Image not found: $WALL"
+  exit 1
+fi
+
+#echo "🎨 Setting wallpaper and generating theme from: $WALL"
+
+# 1. Generate theme and apply with pywal
+$HOME/Venvs/main/bin/wal -i "$WALL"
+
+# 2. Generate Polybar-compatible colors.ini
+WAL_COLORS="$HOME/.cache/wal/colors.sh"
+INI_OUT="$HOME/.cache/wal/colors.ini"
+
+if [ -f "$WAL_COLORS" ]; then
+  source "$WAL_COLORS"
+  cat >"$INI_OUT" <<EOF
+[colors]
+background = $background
+foreground = $foreground
+color0 = $color0
+color1 = $color1
+color2 = $color2
+color3 = $color3
+color4 = $color4
+color5 = $color5
+color6 = $color6
+color7 = $color7
+color8 = $color8
+color9 = $color9
+color10 = $color10
+color11 = $color11
+color12 = $color12
+color13 = $color13
+color14 = $color14
+color15 = $color15
+EOF
+  #echo "✅ Generated Polybar colors.ini"
+#else
+#  #echo "⚠️ Failed to find $WAL_COLORS"
+fi
+
+# 3. Restart Polybar
+#echo "🔁 Restarting Polybar..."
+pkill -x polybar
+~/.config/polybar/launch.sh &
+
+# 4. Reload bspwm (for border color update)
+#echo "🔁 Reloading bspwm..."
+bspc wm -r
+
+#echo "✅ Theme applied successfully."
