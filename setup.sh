@@ -36,7 +36,7 @@ echo "Setting up Python3"
 mkdir -p ~/Venvs/
 python3 -m venv ~/Venvs/main
 ~/Venvs/main/bin/python3 -m pip install -U pip
-~/Venvs/main/bin/python3 -m pip install -U pywal ipython rofimoji
+~/Venvs/main/bin/python3 -m pip install -U pywal ipython rofimoji gemini-cli
 
 #=========================#
 #       CONFIG FILES      #
@@ -53,3 +53,9 @@ mkdir -p ~/.config/picom/
 ln -sf "$SCRIPT_DIR/config/picom/picom.conf" ~/.config/picom/picom.conf
 mkdir -p ~/.config/lazygit/
 ln -sf "$SCRIPT_DIR/config/lazygit/config.yml" ~/.config/lazygit/config.yml
+
+# Neovim
+mkdir -p ~/.config/nvim/lua/config ~/.config/nvim/lua/plugins
+ln -sf "$SCRIPT_DIR/config/nvim/lua/config/keymaps.lua" ~/.config/nvim/lua/config/keymaps.lua
+ln -sf "$SCRIPT_DIR/config/nvim/lua/plugins/telescope.lua" ~/.config/nvim/lua/plugins/telescope.lua
+ln -sf "$SCRIPT_DIR/config/nvim/lua/plugins/gemini.lua" ~/.config/nvim/lua/plugins/gemini.lua
